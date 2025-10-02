@@ -1,0 +1,41 @@
+# Inventory file for EVPN Spine-Leaf deployment
+# This file contains connection details for all switches in the topology
+
+switches:
+  spine-01:
+    hostname: 192.168.1.11      # Management IP address
+    username: cumulus            # SSH username
+    password: CumulusLinux!      # SSH password
+    port: 22                     # SSH port
+    role: spine                  # Switch role
+    config_file: spine/spine-01.conf
+  
+  spine-02:
+    hostname: 192.168.1.12      # Management IP address
+    username: cumulus            # SSH username
+    password: CumulusLinux!      # SSH password
+    port: 22                     # SSH port
+    role: spine                  # Switch role
+    config_file: spine/spine-02.conf
+  
+  leaf-01:
+    hostname: 192.168.1.21      # Management IP address
+    username: cumulus            # SSH username
+    password: CumulusLinux!      # SSH password
+    port: 22                     # SSH port
+    role: leaf                   # Switch role
+    config_file: leaf/leaf-01.conf
+  
+  leaf-02:
+    hostname: 192.168.1.22      # Management IP address
+    username: cumulus            # SSH username
+    password: CumulusLinux!      # SSH password
+    port: 22                     # SSH port
+    role: leaf                   # Switch role
+    config_file: leaf/leaf-02.conf
+
+# Global settings
+settings:
+  ssh_timeout: 30
+  config_backup: true
+  verify_after_deploy: true
